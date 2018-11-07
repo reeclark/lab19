@@ -1,0 +1,13 @@
+select * from customers;
+select distinct country from customers;
+select * from customers where customerid like "b1%";
+select * from orders limit 100;
+select * from customers where postalcode= ('1010','3012','12209','05023');
+select * from orders where shipregion is not null;
+select * from customers order by country, city;
+insert into customers(country, city) values('United States', 'Grand Rapids');
+update orders set shipregion= 'eurozone' where shipcountry= 'france';
+delete from order_details where quantity = 1;
+select avg(quantity) as "Average Order Amount", max(quantity) as "Largest Ordered", min(quantity) as "Smallest Order" from order_details;
+select avg(quantity) as "Average Order Amount", max(quantity) as "Largest Ordered", min(quantity) as "Smallest Order" from order_details group by orderid;
+select customerid from orders where orderid = '10290';
